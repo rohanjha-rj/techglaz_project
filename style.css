@@ -54,7 +54,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -354,8 +354,11 @@ ul {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  transition: all 0.3s ease;
-  z-index: 999;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  z-index: 9998;
+  /* Isolate from any parent transform so fixed positioning is always viewport-relative */
+  isolation: isolate;
+  will-change: opacity, transform;
 }
 
 .back-to-top.visible {
