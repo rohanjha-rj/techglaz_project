@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | TechGlaz</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Analytics (Feature 15) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window,document,"clarity","script","XXXXXXXXXX");
+    </script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-microchip" style="color: var(--primary);"></i> TechGlaz
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="portfolio.html" class="nav-link active">Portfolio</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="custom-request.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="custom-request.html" class="btn btn-primary" style="text-align: center; margin-top: 1rem;">Custom Project Request</a>
+            <button class="theme-toggle" id="mobileThemeToggle" style="margin-top: 1rem;">
+                <i class="fa-solid fa-moon"></i> Toggle Theme
+            </button>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="portfolio-header">
+        <div class="container fade-in">
+            <h1 class="section-title">Our <span class="text-gradient">Past Work</span></h1>
+            <p class="section-subtitle">Explore a selection of final-year projects we've successfully delivered.</p>
+            
+            <div class="filter-tabs" id="portfolioFilter">
+                <button class="filter-tab active" data-filter="all">All Projects</button>
+                <button class="filter-tab" data-filter="software">Software / AI</button>
+                <button class="filter-tab" data-filter="hardware">IoT / Electronics</button>
+                <button class="filter-tab" data-filter="core">Civil / Mechanical</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section class="section pt-0">
+        <div class="container">
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Portfolio Items (Hardcoded for demo, normally fetched or generated) -->
+                <div class="portfolio-card fade-in" data-category="software">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=600&q=80" alt="Attendance System" class="portfolio-img">
+                        <span class="portfolio-branch-badge">Computer Science</span>
+                        <div class="portfolio-overlay">
+                            <a href="projects.html" class="portfolio-overlay-cta">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">AI-Powered Attendance System</h3>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Python</span>
+                            <span class="portfolio-tag">OpenCV</span>
+                            <span class="portfolio-tag">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in" data-category="hardware" style="transition-delay: 0.1s">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c5c1b?auto=format&fit=crop&w=600&q=80" alt="Smart Agri" class="portfolio-img">
+                        <span class="portfolio-branch-badge">Electronics</span>
+                        <div class="portfolio-overlay">
+                            <a href="projects.html" class="portfolio-overlay-cta">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Smart Agriculture IoT System</h3>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Arduino</span>
+                            <span class="portfolio-tag">Sensors</span>
+                            <span class="portfolio-tag">Blynk IoT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in" data-category="core" style="transition-delay: 0.2s">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="STAAD Pro" class="portfolio-img">
+                        <span class="portfolio-branch-badge">Civil</span>
+                        <div class="portfolio-overlay">
+                            <a href="projects.html" class="portfolio-overlay-cta">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Multi-Story Building Design (STAAD.Pro)</h3>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">STAAD.Pro</span>
+                            <span class="portfolio-tag">AutoCAD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in" data-category="software" style="transition-delay: 0.3s">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f4ec651?auto=format&fit=crop&w=600&q=80" alt="Blockchain" class="portfolio-img">
+                        <span class="portfolio-branch-badge">Information Tech</span>
+                        <div class="portfolio-overlay">
+                            <a href="projects.html" class="portfolio-overlay-cta">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Blockchain Product Verification</h3>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">React</span>
+                            <span class="portfolio-tag">Solidity</span>
+                            <span class="portfolio-tag">Ethereum</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in" data-category="hardware" style="transition-delay: 0.4s">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80" alt="Railway Gate" class="portfolio-img">
+                        <span class="portfolio-branch-badge">Electrical</span>
+                        <div class="portfolio-overlay">
+                            <a href="projects.html" class="portfolio-overlay-cta">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Automatic Railway Gate Control</h3>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Microcontroller</span>
+                            <span class="portfolio-tag">IR Sensors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in" data-category="core" style="transition-delay: 0.5s">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1532054950341-2a912bb67eb8?auto=format&fit=crop&w=600&q=80" alt="Disc Brake" class="portfolio-img">
+                        <span class="portfolio-branch-badge">Mechanical</span>
+                        <div class="portfolio-overlay">
+                            <a href="projects.html" class="portfolio-overlay-cta">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Disc Brake Thermal Analysis</h3>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">ANSYS</span>
+                            <span class="portfolio-tag">SolidWorks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Strip -->
+            <div class="portfolio-stats-strip fade-in">
+                <div class="portfolio-stat">
+                    <div class="portfolio-stat-num">500+</div>
+                    <div class="portfolio-stat-label">Projects Delivered</div>
+                </div>
+                <div class="portfolio-stat">
+                    <div class="portfolio-stat-num">98%</div>
+                    <div class="portfolio-stat-label">Success Rate</div>
+                </div>
+                <div class="portfolio-stat">
+                    <div class="portfolio-stat-num">50+</div>
+                    <div class="portfolio-stat-label">Colleges Covered</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fa-solid fa-microchip" style="color: var(--primary);"></i> TechGlaz
+                    </a>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;">
+                        Empowering engineering students with top-tier technical projects, source code, and comprehensive documentation to ace their final year.
+                    </p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="projects.html">Browse Projects</a></li>
+                        <li><a href="pricing.html">Pricing Plans</a></li>
+                        <li><a href="portfolio.html">Our Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> manager@techglaz.com</li>
+                        <li><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +91 6204696995</li>
+                        <li><i class="fa-brands fa-whatsapp" style="margin-right: 8px; color: #25D366;"></i> WhatsApp Support</li>
+                        <li><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Ank Villa, Near Manorama ITI, Sabour, Bhagalpur, Bihar</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TechGlaz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Portfolio Filtering Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.filter-tab');
+            const cards = document.querySelectorAll('.portfolio-card');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Update active state
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    // Filter logic
+                    const filterValue = tab.dataset.filter;
+                    cards.forEach(card => {
+                        if (filterValue === 'all' || card.dataset.category === filterValue) {
+                            card.style.display = 'block';
+                            // Trigger reflow for animation
+                            card.classList.remove('visible');
+                            void card.offsetWidth;
+                            card.classList.add('visible');
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

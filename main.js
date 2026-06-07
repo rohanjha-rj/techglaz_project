@@ -190,4 +190,106 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Call it initially
     updateThemeAwareImages();
+
+    // 11. WhatsApp Floating CTA Button (Feature 4)
+    const waFloatBtn = document.createElement('a');
+    waFloatBtn.className = 'whatsapp-float';
+    waFloatBtn.href = 'https://wa.me/916204696995?text=Hi%20TechGlaz!%20%F0%9F%91%8B%20I%27d%20like%20to%20enquire%20about%20a%20project.';
+    waFloatBtn.target = '_blank';
+    waFloatBtn.rel = 'noopener noreferrer';
+    waFloatBtn.id = 'wa-float-btn';
+    waFloatBtn.setAttribute('aria-label', 'Chat on WhatsApp');
+    waFloatBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i><span>Get a Quote</span>';
+    document.body.appendChild(waFloatBtn);
+    // Show after 2s delay so it doesn't distract on initial load
+    setTimeout(() => waFloatBtn.classList.add('visible'), 2000);
+
+    // 12. Global Toast Notification System (Feature 10)
+    window.showToast = function(message) {
+        let toast = document.getElementById('global-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'global-toast';
+            toast.className = 'toast-notification';
+            document.body.appendChild(toast);
+        }
+        toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:#10b981;"></i> ${message}`;
+        toast.classList.add('show');
+        if (window.toastTimeout) clearTimeout(window.toastTimeout);
+        window.toastTimeout = setTimeout(() => toast.classList.remove('show'), 3000);
+    };
+
+    // 13. WhatsApp Quick Order Modal (Feature 11)
+    window.openWhatsAppModal = function(itemName, itemPrice) {
+        let overlay = document.getElementById('wa-modal-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.id = 'wa-modal-overlay';
+            overlay.className = 'wa-modal-overlay';
+            overlay.innerHTML = `
+                <div class="wa-modal">
+                    <div class="wa-modal-header">
+                        <div>
+                            <h3 class="wa-modal-title">Quick Order</h3>
+                            <p class="wa-modal-subtitle">Choose your plan for <strong id="wa-modal-item-name"></strong></p>
+                        </div>
+                        <button class="wa-close-btn" id="wa-close-btn"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="wa-plan-options">
+                        <div class="wa-plan-option selected" data-plan="Standard">
+                            <div>
+                                <div class="wa-plan-name">Standard Plan</div>
+                                <div class="wa-plan-desc">Code + Docs + Setup Guide</div>
+                            </div>
+                            <div class="wa-plan-price" id="wa-modal-price-std"></div>
+                        </div>
+                        <div class="wa-plan-option" data-plan="Premium">
+                            <div>
+                                <div class="wa-plan-name">Premium Plan</div>
+                                <div class="wa-plan-desc">Standard + Live Explanation + Viva Prep</div>
+                            </div>
+                            <div class="wa-plan-price" id="wa-modal-price-prm"></div>
+                        </div>
+                    </div>
+                    <button class="wa-send-btn" id="wa-send-btn"><i class="fa-brands fa-whatsapp"></i> Continue to WhatsApp</button>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+
+            // Modal Events
+            document.getElementById('wa-close-btn').addEventListener('click', () => overlay.classList.remove('active'));
+            overlay.addEventListener('click', (e) => { if(e.target === overlay) overlay.classList.remove('active'); });
+            
+            const options = overlay.querySelectorAll('.wa-plan-option');
+            options.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    options.forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                });
+            });
+
+            document.getElementById('wa-send-btn').addEventListener('click', () => {
+                const selectedPlan = overlay.querySelector('.wa-plan-option.selected').dataset.plan;
+                const name = document.getElementById('wa-modal-item-name').textContent;
+                const msg = encodeURIComponent(`Hi TechGlaz! 👋\nI'd like to order the project:\n*${name}*\n\nI am interested in the *${selectedPlan} Plan*.\nPlease share the payment details and next steps.`);
+                window.open(`https://wa.me/916204696995?text=${msg}`, '_blank');
+                overlay.classList.remove('active');
+            });
+        }
+
+        // Set dynamic content
+        document.getElementById('wa-modal-item-name').textContent = itemName;
+        const pNum = parseInt(itemPrice);
+        document.getElementById('wa-modal-price-std').textContent = '₹' + pNum.toLocaleString('en-IN');
+        document.getElementById('wa-modal-price-prm').textContent = '₹' + (pNum + 1500).toLocaleString('en-IN'); // Premium is base + 1500
+        
+        // Reset selection to Standard
+        const options = overlay.querySelectorAll('.wa-plan-option');
+        options.forEach(o => o.classList.remove('selected'));
+        options[0].classList.add('selected');
+
+        // Show modal
+        overlay.classList.add('active');
+    };
+
 });

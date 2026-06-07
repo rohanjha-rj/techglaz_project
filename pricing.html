@@ -12,6 +12,20 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Analytics (Feature 15) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window,document,"clarity","script","XXXXXXXXXX");
+    </script>
+
     <style>
         .pricing-header {
             padding-top: 120px;
@@ -215,6 +229,7 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="projects.html" class="nav-link">Projects</a>
                 <a href="pricing.html" class="nav-link active">Pricing</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="custom-request.html" class="btn btn-primary"
@@ -235,6 +250,19 @@
     <!-- Pricing Cards -->
     <section>
         <div class="container">
+            <!-- Countdown Timer Banner (Feature 8) -->
+            <div class="countdown-banner fade-in" id="pricingCountdown">
+                <div class="countdown-label"><span>&#128293;</span> Special Offer Ends In:</div>
+                <div class="countdown-units">
+                    <div class="countdown-unit"><span class="countdown-number" id="cdDays">--</span><span class="countdown-unit-label">Days</span></div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-unit"><span class="countdown-number" id="cdHours">--</span><span class="countdown-unit-label">Hours</span></div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-unit"><span class="countdown-number" id="cdMins">--</span><span class="countdown-unit-label">Mins</span></div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-unit"><span class="countdown-number" id="cdSecs">--</span><span class="countdown-unit-label">Secs</span></div>
+                </div>
+            </div>
             <div class="pricing-grid">
 
                 <!-- Basic Plan -->
@@ -468,7 +496,42 @@
         </div>
     </footer>
 
+    <script>
+    // Feature 8: Countdown Timer Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const cdBanner = document.getElementById('pricingCountdown');
+        if (!cdBanner) return;
+        
+        // Target: Midnight tonight (local time)
+        let targetDate = new Date();
+        targetDate.setHours(23, 59, 59, 999);
+        
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = targetDate.getTime() - now;
+            
+            if (distance < 0) {
+                // Reset to next day midnight if expired
+                targetDate.setDate(targetDate.getDate() + 1);
+                updateTimer();
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('cdDays').textContent = days.toString().padStart(2, '0');
+            document.getElementById('cdHours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('cdMins').textContent = mins.toString().padStart(2, '0');
+            document.getElementById('cdSecs').textContent = secs.toString().padStart(2, '0');
+        }
+        
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    });
+    </script>
     <script src="main.js"></script>
 </body>
-
 </html>

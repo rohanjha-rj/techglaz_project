@@ -10,6 +10,20 @@
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Analytics (Feature 15) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window,document,"clarity","script","XXXXXXXXXX");
+    </script>
     
     <style>
         .projects-header {
@@ -263,6 +277,7 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="projects.html" class="nav-link active">Projects</a>
                 <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="custom-request.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
@@ -279,6 +294,13 @@
             <div class="search-container">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" id="searchInput" class="search-input" placeholder="Search by project name, technology, or keywords...">
+            </div>
+            <!-- Wishlist View Button (Feature 10) -->
+            <div style="display:flex;justify-content:center;margin-top:1rem;">
+                <button class="wishlist-view-btn" id="wishlistViewBtn">
+                    <i class="fa-regular fa-heart"></i> My Wishlist
+                    <span class="wishlist-count-badge" id="wishlistCountBadge">0</span>
+                </button>
             </div>
         </div>
     </header>
@@ -338,6 +360,16 @@
                         <label class="filter-label">
                             <input type="checkbox" class="filter-cb" data-category="difficulty" value="advanced"> Advanced
                         </label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3 class="filter-title">Price Range</h3>
+                    <div class="price-range-wrapper">
+                        <div class="price-range-display">
+                            <span>&#8377;0</span>
+                            <span class="selected-range" id="priceRangeDisplay">Up to &#8377;10,000</span>
+                        </div>
+                        <input type="range" class="price-slider" id="priceSlider" min="0" max="10000" value="10000" step="500">
                     </div>
                 </div>
             </aside>
