@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechGlaz | Let's Create Your Own Future</title>
-    <meta name="description" content="TechGlaz provides premium final-year engineering projects for B.Tech students. Civil, Mechanical, Electrical, Electronics, CS and IT branches.">
-    
+    <meta name="description"
+        content="TechGlaz provides premium final-year engineering projects for B.Tech students. Civil, Mechanical, Electrical, Electronics, CS and IT branches.">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         /* Homepage Specific Styles */
 
@@ -35,11 +37,14 @@
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            transform: scale(1.04); /* slight zoom so edges never show white */
+            transform: scale(1.04);
+            /* slight zoom so edges never show white */
             transition: transform 8s ease-out;
         }
+
         .hero:hover .hero-bg {
-            transform: scale(1.08); /* subtle Ken-Burns on hover */
+            transform: scale(1.08);
+            /* subtle Ken-Burns on hover */
         }
 
         /* Clean dark overlay for text readability */
@@ -50,13 +55,15 @@
         }
 
         /* Decorative ambient glow blobs */
-        .hero-glow-1, .hero-glow-2 {
+        .hero-glow-1,
+        .hero-glow-2 {
             position: absolute;
             border-radius: 50%;
             filter: blur(120px);
             pointer-events: none;
             z-index: 1;
         }
+
         .hero-glow-1 {
             width: 35vw;
             height: 35vw;
@@ -64,6 +71,7 @@
             left: 5%;
             background: radial-gradient(circle, rgba(37, 99, 235, 0.35), transparent 70%);
         }
+
         .hero-glow-2 {
             width: 30vw;
             height: 30vw;
@@ -91,7 +99,7 @@
             margin-bottom: 1.5rem;
             line-height: 1.1;
             color: #ffffff;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
         }
 
         .hero-content h1 .text-gradient {
@@ -107,7 +115,7 @@
             margin-bottom: 2.5rem;
             max-width: 680px;
             line-height: 1.8;
-            text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
         }
 
         .hero-buttons {
@@ -120,13 +128,14 @@
         /* Override outline button colours for dark hero background */
         .hero-buttons .btn-outline {
             color: #ffffff;
-            border-color: rgba(255,255,255,0.55);
+            border-color: rgba(255, 255, 255, 0.55);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
         }
+
         .hero-buttons .btn-outline:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             border-color: #ffffff;
             color: #ffffff;
         }
@@ -142,20 +151,31 @@
             flex-direction: column;
             align-items: center;
             gap: 0.4rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             font-size: 0.8rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
+
         .hero-scroll-hint .scroll-line {
             width: 1.5px;
             height: 40px;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
             animation: scrollPulse 2s ease-in-out infinite;
         }
+
         @keyframes scrollPulse {
-            0%,100% { opacity: 0.6; transform: scaleY(1); }
-            50%      { opacity: 1;   transform: scaleY(1.15); }
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scaleY(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1.15);
+            }
         }
 
         /* Stats Section */
@@ -315,6 +335,7 @@
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -324,13 +345,16 @@
             .hero-container {
                 padding: 110px 1.5rem 3.5rem;
             }
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
+
             .stats-grid {
                 grid-template-columns: 1fr;
             }
+
             .footer-grid {
                 grid-template-columns: 1fr;
             }
@@ -342,26 +366,27 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXXX');
     </script>
     <!-- Microsoft Clarity | Replace XXXXXXXXXX with your Clarity Project ID -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "XXXXXXXXXX");
     </script>
 </head>
+
 <body>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png" alt="TechGlaz Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 100 100\' loading="lazy"><rect width=\'100\' height=\'100\' fill=\'%232563eb\'/><text x=\'50\' y=\'65\' font-family=\'sans-serif\' font-size=\'50\' fill=\'white\' text-anchor=\'middle\'>TG</text></svg>'">
+                <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png" alt="TechGlaz Logo" loading="lazy">
                 TechGlaz
             </a>
             <button class="mobile-menu-btn">
@@ -374,7 +399,8 @@
                 <a href="portfolio.html" class="nav-link">Portfolio</a>
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <a href="custom-request.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
+                <a href="custom-request.html" class="btn btn-primary"
+                    style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
             </div>
         </div>
     </nav>
@@ -392,7 +418,8 @@
         <div class="hero-container">
             <div class="hero-content fade-in">
                 <h1>Let's Create Your <span class="text-gradient">Own Future</span></h1>
-                <p>Premium, ready-to-deploy final year engineering projects for B.Tech students. Complete with documentation, source code, and expert guidance.</p>
+                <p>Premium, ready-to-deploy final year engineering projects for B.Tech students. Complete with
+                    documentation, source code, and expert guidance.</p>
                 <div class="hero-buttons">
                     <a href="projects.html" class="btn btn-primary" id="hero-explore-btn">
                         Explore Projects <i class="fa-solid fa-arrow-right"></i>
@@ -594,56 +621,86 @@
                         <span class="faq-question">Do I get the complete source code?</span>
                         <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
                     </div>
-                    <div class="faq-body"><p>Yes! You receive 100% of the source code, all assets, libraries, and configuration files needed to run the project. Code is well-commented and structured for easy understanding.</p></div>
+                    <div class="faq-body">
+                        <p>Yes! You receive 100% of the source code, all assets, libraries, and configuration files
+                            needed to run the project. Code is well-commented and structured for easy understanding.</p>
+                    </div>
                 </div>
                 <div class="faq-item fade-in">
                     <div class="faq-header">
                         <span class="faq-question">Can I modify the project after buying?</span>
                         <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
                     </div>
-                    <div class="faq-body"><p>Absolutely. Once delivered, the project is completely yours. Modify any part of the code, design, or documentation to meet your college's specific requirements.</p></div>
+                    <div class="faq-body">
+                        <p>Absolutely. Once delivered, the project is completely yours. Modify any part of the code,
+                            design, or documentation to meet your college's specific requirements.</p>
+                    </div>
                 </div>
                 <div class="faq-item fade-in">
                     <div class="faq-header">
                         <span class="faq-question">How long does delivery take?</span>
                         <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
                     </div>
-                    <div class="faq-body"><p>Standard projects are delivered within <strong>24–72 hours</strong> of payment confirmation. Custom-built projects may take 5–10 days. Urgent delivery can be arranged — just message us on WhatsApp.</p></div>
+                    <div class="faq-body">
+                        <p>Standard projects are delivered within <strong>24–72 hours</strong> of payment confirmation.
+                            Custom-built projects may take 5–10 days. Urgent delivery can be arranged — just message us
+                            on WhatsApp.</p>
+                    </div>
                 </div>
                 <div class="faq-item fade-in">
                     <div class="faq-header">
                         <span class="faq-question">What if I face issues during viva or examination?</span>
                         <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
                     </div>
-                    <div class="faq-body"><p>We include a 1-hour live code explanation session (Standard &amp; Premium plans) so you're fully prepared. Our support team remains available on WhatsApp right up to your submission date.</p></div>
+                    <div class="faq-body">
+                        <p>We include a 1-hour live code explanation session (Standard &amp; Premium plans) so you're
+                            fully prepared. Our support team remains available on WhatsApp right up to your submission
+                            date.</p>
+                    </div>
                 </div>
                 <div class="faq-item fade-in">
                     <div class="faq-header">
                         <span class="faq-question">Is the project 100% plagiarism-free?</span>
                         <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
                     </div>
-                    <div class="faq-body"><p>Yes. Every project is built from scratch with original source code. Premium plan customers receive a Turnitin plagiarism report as proof. We guarantee 0% code plagiarism across all deliverables.</p></div>
+                    <div class="faq-body">
+                        <p>Yes. Every project is built from scratch with original source code. Premium plan customers
+                            receive a Turnitin plagiarism report as proof. We guarantee 0% code plagiarism across all
+                            deliverables.</p>
+                    </div>
                 </div>
                 <div class="faq-item fade-in">
                     <div class="faq-header">
                         <span class="faq-question">What documentation is included?</span>
                         <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
                     </div>
-                    <div class="faq-body"><p>Depending on your plan: IEEE base paper, project synopsis, full project report (50+ pages in IEEE format), PPT presentation, and setup guide. Standard and Premium plans include all documentation.</p></div>
+                    <div class="faq-body">
+                        <p>Depending on your plan: IEEE base paper, project synopsis, full project report (50+ pages in
+                            IEEE format), PPT presentation, and setup guide. Standard and Premium plans include all
+                            documentation.</p>
+                    </div>
                 </div>
                 <div class="faq-item fade-in">
                     <div class="faq-header">
                         <span class="faq-question">Is the payment secure?</span>
                         <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
                     </div>
-                    <div class="faq-body"><p>We accept payments via UPI, Bank Transfer, and other verified methods. We recommend confirming your order details on WhatsApp before payment. Your financial safety is our top priority.</p></div>
+                    <div class="faq-body">
+                        <p>We accept payments via UPI, Bank Transfer, and other verified methods. We recommend
+                            confirming your order details on WhatsApp before payment. Your financial safety is our top
+                            priority.</p>
+                    </div>
                 </div>
                 <div class="faq-item fade-in">
                     <div class="faq-header">
                         <span class="faq-question">Can I request a completely custom project?</span>
                         <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
                     </div>
-                    <div class="faq-body"><p>Yes! Fill out our <a href="custom-request.html">Custom Project Request form</a> with your idea, branch, and requirements. Our team will review and send you a quote within 24 hours — across any domain: CS, ECE, Civil, or Mechanical.</p></div>
+                    <div class="faq-body">
+                        <p>Yes! Fill out our <a href="custom-request.html">Custom Project Request form</a> with your
+                            idea, branch, and requirements. Our team will review and send you a quote within 24 hours —
+                            across any domain: CS, ECE, Civil, or Mechanical.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -654,7 +711,8 @@
         <div class="container">
             <div class="text-center fade-in">
                 <h2 class="section-title">Student <span class="text-gradient">Reviews</span></h2>
-                <p class="section-subtitle">Real feedback from verified students who completed their final year with TechGlaz.</p>
+                <p class="section-subtitle">Real feedback from verified students who completed their final year with
+                    TechGlaz.</p>
             </div>
             <div class="reviews-filters fade-in">
                 <button class="review-filter-btn active" data-filter="all">All Reviews</button>
@@ -668,81 +726,150 @@
                 <div class="glass-card review-card fade-in" data-stars="5" data-branch="cs">
                     <div class="review-card-top">
                         <div class="reviewer-info">
-                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#2563eb,#7c3aed)">R</div>
-                            <div><div class="reviewer-name">Rahul Sharma</div><div class="reviewer-college">NIT Patna &middot; B.Tech CSE 2024</div></div>
+                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#2563eb,#7c3aed)">R
+                            </div>
+                            <div>
+                                <div class="reviewer-name">Rahul Sharma</div>
+                                <div class="reviewer-college">NIT Patna &middot; B.Tech CSE 2024</div>
+                            </div>
                         </div>
                         <span class="reviewer-branch-badge">CS / IT</span>
                     </div>
-                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="review-text">"The AI-based attendance system was absolutely flawless. The code explanation session helped me defend every module with confidence. Got A+ in my final evaluation!"</p>
-                    <div class="review-footer"><div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div><span class="review-project-name">AI Attendance System</span></div>
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"The AI-based attendance system was absolutely flawless. The code explanation
+                        session helped me defend every module with confidence. Got A+ in my final evaluation!"</p>
+                    <div class="review-footer">
+                        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div>
+                        <span class="review-project-name">AI Attendance System</span>
+                    </div>
                 </div>
-                <div class="glass-card review-card fade-in" data-stars="5" data-branch="ee" style="transition-delay:0.06s">
+                <div class="glass-card review-card fade-in" data-stars="5" data-branch="ee"
+                    style="transition-delay:0.06s">
                     <div class="review-card-top">
                         <div class="reviewer-info">
-                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#0ea5e9,#06b6d4)">A</div>
-                            <div><div class="reviewer-name">Anjali Desai</div><div class="reviewer-college">BITS Pilani &middot; B.Tech ECE 2023</div></div>
+                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#0ea5e9,#06b6d4)">A
+                            </div>
+                            <div>
+                                <div class="reviewer-name">Anjali Desai</div>
+                                <div class="reviewer-college">BITS Pilani &middot; B.Tech ECE 2023</div>
+                            </div>
                         </div>
                         <span class="reviewer-branch-badge">Electronics</span>
                     </div>
-                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="review-text">"Got my IoT Smart Agriculture project in 2 days with complete IEEE documentation. WhatsApp support was incredibly responsive. Highly recommend to all ECE students!"</p>
-                    <div class="review-footer"><div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div><span class="review-project-name">IoT Smart Agriculture</span></div>
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Got my IoT Smart Agriculture project in 2 days with complete IEEE
+                        documentation. WhatsApp support was incredibly responsive. Highly recommend to all ECE
+                        students!"</p>
+                    <div class="review-footer">
+                        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div>
+                        <span class="review-project-name">IoT Smart Agriculture</span>
+                    </div>
                 </div>
-                <div class="glass-card review-card fade-in" data-stars="5" data-branch="cs" style="transition-delay:0.12s">
+                <div class="glass-card review-card fade-in" data-stars="5" data-branch="cs"
+                    style="transition-delay:0.12s">
                     <div class="review-card-top">
                         <div class="reviewer-info">
-                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#7c3aed,#ec4899)">P</div>
-                            <div><div class="reviewer-name">Priya Singh</div><div class="reviewer-college">VIT Vellore &middot; B.Tech IT 2024</div></div>
+                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#7c3aed,#ec4899)">P
+                            </div>
+                            <div>
+                                <div class="reviewer-name">Priya Singh</div>
+                                <div class="reviewer-college">VIT Vellore &middot; B.Tech IT 2024</div>
+                            </div>
                         </div>
                         <span class="reviewer-branch-badge">CS / IT</span>
                     </div>
-                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="review-text">"Ordered Blockchain Fake Product Detection on Premium plan. Remote AnyDesk installation was seamless and the viva prep guide was an absolute lifesaver before my exam!"</p>
-                    <div class="review-footer"><div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div><span class="review-project-name">Blockchain Detection</span></div>
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Ordered Blockchain Fake Product Detection on Premium plan. Remote AnyDesk
+                        installation was seamless and the viva prep guide was an absolute lifesaver before my exam!"</p>
+                    <div class="review-footer">
+                        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div>
+                        <span class="review-project-name">Blockchain Detection</span>
+                    </div>
                 </div>
-                <div class="glass-card review-card fade-in" data-stars="4" data-branch="mech" style="transition-delay:0.18s">
+                <div class="glass-card review-card fade-in" data-stars="4" data-branch="mech"
+                    style="transition-delay:0.18s">
                     <div class="review-card-top">
                         <div class="reviewer-info">
-                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">A</div>
-                            <div><div class="reviewer-name">Amit Kumar</div><div class="reviewer-college">IIT (ISM) Dhanbad &middot; B.Tech ME 2023</div></div>
+                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">A
+                            </div>
+                            <div>
+                                <div class="reviewer-name">Amit Kumar</div>
+                                <div class="reviewer-college">IIT (ISM) Dhanbad &middot; B.Tech ME 2023</div>
+                            </div>
                         </div>
                         <span class="reviewer-branch-badge">Mechanical</span>
                     </div>
-                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
-                    <p class="review-text">"ANSYS disc brake simulation was well-structured and accurate. Documentation was thorough at 55+ pages. Small delivery delay but team communicated proactively throughout."</p>
-                    <div class="review-footer"><div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div><span class="review-project-name">ANSYS Disc Brake</span></div>
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-regular fa-star"></i></div>
+                    <p class="review-text">"ANSYS disc brake simulation was well-structured and accurate. Documentation
+                        was thorough at 55+ pages. Small delivery delay but team communicated proactively throughout."
+                    </p>
+                    <div class="review-footer">
+                        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div>
+                        <span class="review-project-name">ANSYS Disc Brake</span>
+                    </div>
                 </div>
-                <div class="glass-card review-card fade-in" data-stars="5" data-branch="ee" style="transition-delay:0.24s">
+                <div class="glass-card review-card fade-in" data-stars="5" data-branch="ee"
+                    style="transition-delay:0.24s">
                     <div class="review-card-top">
                         <div class="reviewer-info">
-                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#10b981,#0ea5e9)">R</div>
-                            <div><div class="reviewer-name">Rohan Gupta</div><div class="reviewer-college">DTU Delhi &middot; B.Tech EE 2024</div></div>
+                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#10b981,#0ea5e9)">R
+                            </div>
+                            <div>
+                                <div class="reviewer-name">Rohan Gupta</div>
+                                <div class="reviewer-college">DTU Delhi &middot; B.Tech EE 2024</div>
+                            </div>
                         </div>
                         <span class="reviewer-branch-badge">Electronics</span>
                     </div>
-                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="review-text">"Railway Gate Control System worked perfectly on first run. Microcontroller code was clean and well-commented. Best ₹2,500 investment of my entire B.Tech journey!"</p>
-                    <div class="review-footer"><div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div><span class="review-project-name">Railway Gate Control</span></div>
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Railway Gate Control System worked perfectly on first run. Microcontroller
+                        code was clean and well-commented. Best ₹2,500 investment of my entire B.Tech journey!"</p>
+                    <div class="review-footer">
+                        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div>
+                        <span class="review-project-name">Railway Gate Control</span>
+                    </div>
                 </div>
-                <div class="glass-card review-card fade-in" data-stars="4" data-branch="mech" style="transition-delay:0.3s">
+                <div class="glass-card review-card fade-in" data-stars="4" data-branch="mech"
+                    style="transition-delay:0.3s">
                     <div class="review-card-top">
                         <div class="reviewer-info">
-                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#ec4899,#f59e0b)">N</div>
-                            <div><div class="reviewer-name">Neha Patel</div><div class="reviewer-college">SVNIT Surat &middot; B.Tech Civil 2024</div></div>
+                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#ec4899,#f59e0b)">N
+                            </div>
+                            <div>
+                                <div class="reviewer-name">Neha Patel</div>
+                                <div class="reviewer-college">SVNIT Surat &middot; B.Tech Civil 2024</div>
+                            </div>
                         </div>
                         <span class="reviewer-branch-badge">Civil</span>
                     </div>
-                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-                    <p class="review-text">"Multi-story building design in STAAD.Pro was exactly what I needed — 60+ page report, well-formatted. My professor specifically praised the quality of the structural analysis."</p>
-                    <div class="review-footer"><div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div><span class="review-project-name">Multi-Story Building</span></div>
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star-half-stroke"></i></div>
+                    <p class="review-text">"Multi-story building design in STAAD.Pro was exactly what I needed — 60+
+                        page report, well-formatted. My professor specifically praised the quality of the structural
+                        analysis."</p>
+                    <div class="review-footer">
+                        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Purchase</div>
+                        <span class="review-project-name">Multi-Story Building</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
-    <section class="section" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));">
+    <section class="section"
+        style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));">
         <div class="container text-center fade-in">
             <h2 class="section-title">Ready to Ace Your Final Year?</h2>
             <p class="section-subtitle">Join thousands of successful engineering graduates who trusted TechGlaz.</p>
@@ -758,14 +885,18 @@
             <div class="footer-grid">
                 <div class="footer-about">
                     <a href="index.html" class="logo">
-                        <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png" alt="TechGlaz Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 100 100\' loading="lazy"><rect width=\'100\' height=\'100\' fill=\'%232563eb\'/><text x=\'50\' y=\'65\' font-family=\'sans-serif\' font-size=\'50\' fill=\'white\' text-anchor=\'middle\'>TG</text></svg>'">
+                        <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png" alt="TechGlaz Logo" loading="lazy">
                         TechGlaz
                     </a>
-                    <p>Let's Create Your Own Future. We provide high-quality, ready-to-deploy technical projects for engineering students with complete documentation and expert support.</p>
+                    <p>Let's Create Your Own Future. We provide high-quality, ready-to-deploy technical projects for
+                        engineering students with complete documentation and expert support.</p>
                     <div class="social-links">
-                        <a href="https://techglaz.com/" target="_blank" title="TechGlaz Main Website"><i class="fa-solid fa-globe"></i></a>
-                        <a href="https://www.instagram.com/techglaz/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/techglaz/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://techglaz.com/" target="_blank" title="TechGlaz Main Website"><i
+                                class="fa-solid fa-globe"></i></a>
+                        <a href="https://www.instagram.com/techglaz/" target="_blank" title="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/techglaz/" target="_blank" title="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -791,8 +922,10 @@
                     <ul>
                         <li><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> manager@techglaz.com</li>
                         <li><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +91 6204696995</li>
-                        <li><i class="fa-brands fa-whatsapp" style="margin-right: 8px; color: #25D366;"></i> WhatsApp Support</li>
-                        <li><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Ank Villa, Near Manorama ITI, Sabour, Bhagalpur, Bihar</li>
+                        <li><i class="fa-brands fa-whatsapp" style="margin-right: 8px; color: #25D366;"></i> WhatsApp
+                            Support</li>
+                        <li><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Ank Villa, Near Manorama
+                            ITI, Sabour, Bhagalpur, Bihar</li>
                     </ul>
                 </div>
             </div>
@@ -804,53 +937,56 @@
 
     <!-- Feature 2: Hero Canvas Particle Animation -->
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.getElementById('hero-canvas');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        let pts = [];
-        const N = 55, D = 130;
-        const resize = () => { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; };
-        const mkPt = () => ({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx:(Math.random()-.5)*.5, vy:(Math.random()-.5)*.5, r:Math.random()*1.5+.7 });
-        const init = () => { resize(); pts = Array.from({length:N}, mkPt); };
-        const draw = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            pts.forEach(p => {
-                p.x = (p.x + p.vx + canvas.width) % canvas.width;
-                p.y = (p.y + p.vy + canvas.height) % canvas.height;
-                ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-                ctx.fillStyle = 'rgba(148,196,255,.9)'; ctx.fill();
-            });
-            for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++) {
-                const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, d=Math.hypot(dx,dy);
-                if (d<D) { ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y);
-                    ctx.strokeStyle=`rgba(167,139,250,${(1-d/D)*.45})`; ctx.lineWidth=.8; ctx.stroke(); }
-            }
-            requestAnimationFrame(draw);
-        };
-        init(); draw();
-        window.addEventListener('resize', init);
-    });
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let pts = [];
+            const N = 55, D = 130;
+            const resize = () => { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; };
+            const mkPt = () => ({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, vx: (Math.random() - .5) * .5, vy: (Math.random() - .5) * .5, r: Math.random() * 1.5 + .7 });
+            const init = () => { resize(); pts = Array.from({ length: N }, mkPt); };
+            const draw = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                pts.forEach(p => {
+                    p.x = (p.x + p.vx + canvas.width) % canvas.width;
+                    p.y = (p.y + p.vy + canvas.height) % canvas.height;
+                    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(148,196,255,.9)'; ctx.fill();
+                });
+                for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+                    const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, d = Math.hypot(dx, dy);
+                    if (d < D) {
+                        ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y);
+                        ctx.strokeStyle = `rgba(167,139,250,${(1 - d / D) * .45})`; ctx.lineWidth = .8; ctx.stroke();
+                    }
+                }
+                requestAnimationFrame(draw);
+            };
+            init(); draw();
+            window.addEventListener('resize', init);
+        });
     </script>
     <!-- Feature 14: Reviews Filter -->
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const filterBtns = document.querySelectorAll('.review-filter-btn');
-        const cards = document.querySelectorAll('.review-card');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const f = btn.dataset.filter;
-                cards.forEach(c => {
-                    if (f === 'all') c.style.display = '';
-                    else if (f === '5' || f === '4') c.style.display = c.dataset.stars === f ? '' : 'none';
-                    else c.style.display = c.dataset.branch === f ? '' : 'none';
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.review-filter-btn');
+            const cards = document.querySelectorAll('.review-card');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const f = btn.dataset.filter;
+                    cards.forEach(c => {
+                        if (f === 'all') c.style.display = '';
+                        else if (f === '5' || f === '4') c.style.display = c.dataset.stars === f ? '' : 'none';
+                        else c.style.display = c.dataset.branch === f ? '' : 'none';
+                    });
                 });
             });
         });
-    });
     </script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechGlaz | Request Custom Project</title>
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         .custom-req-header {
             padding-top: 120px;
@@ -176,22 +177,26 @@
             .req-layout {
                 grid-template-columns: 1fr;
             }
+
             .form-grid {
                 grid-template-columns: 1fr;
             }
+
             .info-sidebar {
                 order: -1;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png" alt="TechGlaz Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 100 100\' loading="lazy"><rect width=\'100\' height=\'100\' fill=\'%232563eb\'/><text x=\'50\' y=\'65\' font-family=\'sans-serif\' font-size=\'50\' fill=\'white\' text-anchor=\'middle\'>TG</text></svg>'">
+                <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png"
+                    alt="TechGlaz Logo" loading="lazy">
                 TechGlaz
             </a>
             <button class="mobile-menu-btn">
@@ -201,9 +206,11 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="projects.html" class="nav-link">Projects</a>
                 <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <a href="custom-request.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
+                <a href="custom-request.html" class="btn btn-primary"
+                    style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
             </div>
         </div>
     </nav>
@@ -212,45 +219,50 @@
     <header class="custom-req-header">
         <div class="container fade-in">
             <h1 class="section-title">Request <span class="text-gradient">Custom Project</span></h1>
-            <p class="section-subtitle" style="margin-bottom: 0;">Have a specific requirement or IEEE paper? We'll build it for you from scratch.</p>
+            <p class="section-subtitle" style="margin-bottom: 0;">Have a specific requirement or IEEE paper? We'll build
+                it for you from scratch.</p>
         </div>
     </header>
 
     <!-- Main Content -->
     <section>
         <div class="container req-layout">
-            
+
             <!-- Form Container -->
             <div class="req-form-container fade-in">
                 <div id="successMessage" class="success-message">
                     <i class="fa-solid fa-circle-check" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
                     <h3>Request Submitted Successfully!</h3>
-                    <p>We've received your project requirements. Our technical team will review it and contact you via WhatsApp/Email within 24 hours with a feasibility report and quote.</p>
+                    <p>We've received your project requirements. Our technical team will review it and contact you via
+                        WhatsApp/Email within 24 hours with a feasibility report and quote.</p>
                 </div>
 
-                <form id="customReqForm">
+                <form id="customReqForm" action="https://formspree.io/f/mnjypejw" method="POST">
                     <div class="form-grid">
                         <div class="form-group">
                             <label class="form-label">Full Name</label>
-                            <input type="text" class="form-control" required placeholder="John Doe">
+                            <input type="text" name="name" class="form-control" required placeholder="John Doe">
                         </div>
                         <div class="form-group">
                             <label class="form-label">College/University</label>
-                            <input type="text" class="form-control" required placeholder="XYZ Institute of Technology">
+                            <input type="text" name="college" class="form-control" required
+                                placeholder="XYZ Institute of Technology">
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="form-label">Email Address</label>
-                            <input type="email" class="form-control" required placeholder="john@example.com">
+                            <input type="email" name="email" class="form-control" required
+                                placeholder="john@example.com">
                         </div>
                         <div class="form-group">
                             <label class="form-label">WhatsApp Number</label>
-                            <input type="tel" class="form-control" required placeholder="+91 6204696995">
+                            <input type="tel" name="whatsapp" class="form-control" required
+                                placeholder="+91 6204696995">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Engineering Branch</label>
-                            <select class="form-control" required>
+                            <select name="branch" class="form-control" required>
                                 <option value="">Select Branch...</option>
                                 <option value="cs">Computer Science (CSE)</option>
                                 <option value="it">Information Tech (IT)</option>
@@ -262,21 +274,25 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Preferred Tech Stack (Optional)</label>
-                            <input type="text" class="form-control" placeholder="e.g. Python, React, Arduino">
+                            <input type="text" name="techStack" class="form-control"
+                                placeholder="e.g. Python, React, Arduino">
                         </div>
 
                         <div class="form-group full-width">
                             <label class="form-label">Project Domain/Topic</label>
-                            <input type="text" class="form-control" required placeholder="e.g. Machine Learning based Disease Prediction">
+                            <input type="text" name="domain" class="form-control" required
+                                placeholder="e.g. Machine Learning based Disease Prediction">
                         </div>
 
                         <div class="form-group full-width">
                             <label class="form-label">Detailed Requirements or IEEE Paper Abstract</label>
-                            <textarea class="form-control" required placeholder="Please describe what the project should do, what features you need, or paste the abstract of your base paper here..."></textarea>
+                            <textarea name="requirements" class="form-control" required
+                                placeholder="Please describe what the project should do, what features you need, or paste the abstract of your base paper here..."></textarea>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; justify-content: center; margin-top: 1rem;">
                         Submit Request <i class="fa-solid fa-paper-plane"></i>
                     </button>
                 </form>
@@ -285,20 +301,22 @@
             <!-- Sidebar -->
             <aside class="info-sidebar fade-in" style="transition-delay: 0.2s;">
                 <h3>How Custom Projects Work</h3>
-                
+
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-dot">1</div>
                         <div class="timeline-content">
                             <h4>Submit Requirements</h4>
-                            <p>Fill out the form with your project idea or upload your college requirements/IEEE paper.</p>
+                            <p>Fill out the form with your project idea or upload your college requirements/IEEE paper.
+                            </p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot">2</div>
                         <div class="timeline-content">
                             <h4>Feasibility & Quote</h4>
-                            <p>Our team analyzes the requirements and provides a fixed timeline and price quote within 24 hours.</p>
+                            <p>Our team analyzes the requirements and provides a fixed timeline and price quote within
+                                24 hours.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -312,15 +330,19 @@
                         <div class="timeline-dot">4</div>
                         <div class="timeline-content">
                             <h4>Delivery & Explanation</h4>
-                            <p>We deliver the complete code, report, and conduct a 1-on-1 session to explain the implementation.</p>
+                            <p>We deliver the complete code, report, and conduct a 1-on-1 session to explain the
+                                implementation.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
                     <h4>Need urgent help?</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0 1rem;">Directly message us on WhatsApp with your base paper.</p>
-                    <a href="https://wa.me/916204696995?text=Hi,%20I%20have%20a%20custom%20project%20requirement." target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center; border-color: #25D366; color: #25D366;">
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0 1rem;">Directly message
+                        us on WhatsApp with your base paper.</p>
+                    <a href="https://wa.me/916204696995?text=Hi,%20I%20have%20a%20custom%20project%20requirement."
+                        target="_blank" class="btn btn-outline"
+                        style="width: 100%; justify-content: center; border-color: #25D366; color: #25D366;">
                         <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
                     </a>
                 </div>
@@ -335,14 +357,19 @@
             <div class="footer-grid">
                 <div class="footer-about">
                     <a href="index.html" class="logo">
-                        <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png" alt="TechGlaz Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 100 100\' loading="lazy"><rect width=\'100\' height=\'100\' fill=\'%232563eb\'/><text x=\'50\' y=\'65\' font-family=\'sans-serif\' font-size=\'50\' fill=\'white\' text-anchor=\'middle\'>TG</text></svg>'">
+                        <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png"
+                            alt="TechGlaz Logo" loading="lazy">
                         TechGlaz
                     </a>
-                    <p>Let's Create Your Own Future. We provide high-quality, ready-to-deploy technical projects for engineering students with complete documentation and expert support.</p>
+                    <p>Let's Create Your Own Future. We provide high-quality, ready-to-deploy technical projects for
+                        engineering students with complete documentation and expert support.</p>
                     <div class="social-links">
-                        <a href="https://techglaz.com/" target="_blank" title="TechGlaz Main Website"><i class="fa-solid fa-globe"></i></a>
-                        <a href="https://www.instagram.com/techglaz/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/techglaz/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://techglaz.com/" target="_blank" title="TechGlaz Main Website"><i
+                                class="fa-solid fa-globe"></i></a>
+                        <a href="https://www.instagram.com/techglaz/" target="_blank" title="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/techglaz/" target="_blank" title="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -368,8 +395,10 @@
                     <ul>
                         <li><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> manager@techglaz.com</li>
                         <li><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +91 6204696995</li>
-                        <li><i class="fa-brands fa-whatsapp" style="margin-right: 8px; color: #25D366;"></i> WhatsApp Support</li>
-                        <li><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Ank Villa, Near Manorama ITI, Sabour, Bhagalpur, Bihar</li>
+                        <li><i class="fa-brands fa-whatsapp" style="margin-right: 8px; color: #25D366;"></i> WhatsApp
+                            Support</li>
+                        <li><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Ank Villa, Near Manorama
+                            ITI, Sabour, Bhagalpur, Bihar</li>
                     </ul>
                 </div>
             </div>
@@ -381,13 +410,32 @@
 
     <script src="js/main.js"></script>
     <script>
-        document.getElementById('customReqForm').addEventListener('submit', function(e) {
+        document.getElementById('customReqForm').addEventListener('submit', async function (e) {
             e.preventDefault();
-            // Simulate form submission
-            this.style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const form = e.target;
+            const data = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    this.style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    alert("Oops! There was a problem submitting your form");
+                }
+            } catch (error) {
+                alert("Oops! There was a problem submitting your form");
+            }
         });
     </script>
 </body>
+
 </html>
