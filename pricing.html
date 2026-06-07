@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechGlaz | Pricing Plans</title>
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         .pricing-header {
             padding-top: 120px;
@@ -23,7 +24,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: -3rem; /* Overlap with header */
+            margin-top: -3rem;
+            /* Overlap with header */
             padding-bottom: 5rem;
         }
 
@@ -144,14 +146,14 @@
             min-width: 800px;
         }
 
-        .comparison-table th, 
+        .comparison-table th,
         .comparison-table td {
             padding: 1.5rem;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .comparison-table th:first-child, 
+        .comparison-table th:first-child,
         .comparison-table td:first-child {
             text-align: left;
             font-weight: 500;
@@ -160,7 +162,7 @@
         }
 
         .comparison-table th {
-            background: rgba(0,0,0,0.02);
+            background: rgba(0, 0, 0, 0.02);
             font-size: 1.1rem;
             color: var(--text-primary);
         }
@@ -187,19 +189,23 @@
             .pricing-card.popular {
                 transform: scale(1);
             }
+
             .pricing-card.popular:hover {
                 transform: translateY(-5px);
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png" alt="TechGlaz Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%232563eb\'/><text x=\'50\' y=\'65\' font-family=\'sans-serif\' font-size=\'50\' fill=\'white\' text-anchor=\'middle\'>TG</text></svg>'">
+                <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png"
+                    alt="TechGlaz Logo"
+                    onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%232563eb\'/><text x=\'50\' y=\'65\' font-family=\'sans-serif\' font-size=\'50\' fill=\'white\' text-anchor=\'middle\'>TG</text></svg>'">
                 TechGlaz
             </a>
             <button class="mobile-menu-btn">
@@ -210,7 +216,8 @@
                 <a href="projects.html" class="nav-link">Projects</a>
                 <a href="pricing.html" class="nav-link active">Pricing</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <a href="custom-request.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
+                <a href="custom-request.html" class="btn btn-primary"
+                    style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
@@ -222,7 +229,8 @@
     <header class="pricing-header">
         <div class="container fade-in">
             <h1 class="section-title">Simple, Transparent <span class="text-gradient">Pricing</span></h1>
-            <p class="section-subtitle">Choose the package that best fits your final year requirements. No hidden fees.</p>
+            <p class="section-subtitle">Choose the package that best fits your final year requirements. No hidden fees.
+            </p>
         </div>
     </header>
 
@@ -230,13 +238,13 @@
     <section>
         <div class="container">
             <div class="pricing-grid">
-                
+
                 <!-- Basic Plan -->
                 <div class="pricing-card fade-in glass">
                     <h3 class="plan-name">Basic</h3>
                     <p class="plan-desc">For students who only need the working code and execution guide.</p>
                     <div class="plan-price">₹2,500<span>/project</span></div>
-                    
+
                     <ul class="plan-features">
                         <li class="included"><i class="fa-solid fa-check"></i> Complete Source Code</li>
                         <li class="included"><i class="fa-solid fa-check"></i> Execution Video</li>
@@ -246,8 +254,9 @@
                         <li><i class="fa-solid fa-xmark"></i> Code Explanation Session</li>
                         <li><i class="fa-solid fa-xmark"></i> Remote Installation</li>
                     </ul>
-                    
-                    <a href="projects.html" class="btn btn-outline" style="width: 100%; justify-content: center;">Browse Projects</a>
+
+                    <a href="projects.html" class="btn btn-outline" style="width: 100%; justify-content: center;">Browse
+                        Projects</a>
                 </div>
 
                 <!-- Standard Plan -->
@@ -255,8 +264,8 @@
                     <div class="popular-badge">Most Popular</div>
                     <h3 class="plan-name">Standard</h3>
                     <p class="plan-desc">The complete package with full documentation and explanation.</p>
-                    <div class="plan-price">₹4,000<span>/project</span></div>
-                    
+                    <div class="plan-price">₹5,000<span>/project</span></div>
+
                     <ul class="plan-features">
                         <li class="included"><i class="fa-solid fa-check"></i> Complete Source Code</li>
                         <li class="included"><i class="fa-solid fa-check"></i> Execution Video</li>
@@ -267,16 +276,17 @@
                         <li class="included"><i class="fa-solid fa-check"></i> 1 Hour Code Explanation</li>
                         <li><i class="fa-solid fa-xmark"></i> Remote Installation</li>
                     </ul>
-                    
-                    <a href="projects.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Browse Projects</a>
+
+                    <a href="projects.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Browse
+                        Projects</a>
                 </div>
 
                 <!-- Premium Plan -->
                 <div class="pricing-card fade-in glass" style="transition-delay: 0.2s;">
                     <h3 class="plan-name">Premium</h3>
                     <p class="plan-desc">Done-for-you service with priority support and remote setup.</p>
-                    <div class="plan-price">₹6,500<span>/project</span></div>
-                    
+                    <div class="plan-price">₹10,000<span>/project</span></div>
+
                     <ul class="plan-features">
                         <li class="included"><i class="fa-solid fa-check"></i> Everything in Standard</li>
                         <li class="included"><i class="fa-solid fa-check"></i> Remote AnyDesk/TeamViewer Setup</li>
@@ -286,8 +296,9 @@
                         <li class="included"><i class="fa-solid fa-check"></i> 24/7 Priority WhatsApp Support</li>
                         <li class="included"><i class="fa-solid fa-check"></i> Lifetime Access to Updates</li>
                     </ul>
-                    
-                    <a href="projects.html" class="btn btn-outline" style="width: 100%; justify-content: center;">Browse Projects</a>
+
+                    <a href="projects.html" class="btn btn-outline" style="width: 100%; justify-content: center;">Browse
+                        Projects</a>
                 </div>
 
             </div>
@@ -301,7 +312,7 @@
                 <h2 class="section-title">Compare <span class="text-gradient">Packages</span></h2>
                 <p class="section-subtitle">A detailed breakdown of what's included in each tier.</p>
             </div>
-            
+
             <div class="comparison-table-wrapper">
                 <table class="comparison-table">
                     <thead>
@@ -377,7 +388,9 @@
     <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
         <div class="container text-center fade-in">
             <h2>Need Something Completely Unique?</h2>
-            <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 2rem;">If you have a specific idea or requirement from your college that isn't listed in our projects, we can build it from scratch.</p>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 2rem;">If you have a specific
+                idea or requirement from your college that isn't listed in our projects, we can build it from scratch.
+            </p>
             <a href="custom-request.html" class="btn btn-primary" style="padding: 1rem 2rem;">
                 Request Custom Project
             </a>
@@ -395,4 +408,5 @@
 
     <script src="main.js"></script>
 </body>
+
 </html>
