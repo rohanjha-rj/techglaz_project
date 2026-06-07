@@ -154,7 +154,7 @@ function renderProjectPage(project) {
                         <a href="contact.html?type=buy&pkg=basic&project=${encodeURIComponent(project.title)}" id="buyBtn" class="btn btn-primary" style="justify-content: center;">
                             Purchase Package
                         </a>
-                        <a href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20the%20project:%20${encodeURIComponent(project.title)}" target="_blank" class="btn btn-outline" style="justify-content: center; border-color: #25D366; color: #25D366;">
+                        <a href="https://wa.me/916204696995?text=Hi,%20I'm%20interested%20in%20the%20project:%20${encodeURIComponent(project.title)}" target="_blank" class="btn btn-outline" style="justify-content: center; border-color: #25D366; color: #25D366;">
                             <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
                         </a>
                     </div>
