@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGlaz | Engineering Blog & Resources</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .blog-header {
+            padding-top: 120px;
+            padding-bottom: 3rem;
+            text-align: center;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            padding: 4rem 0;
+            align-items: start;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .blog-img-wrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-img {
+            transform: scale(1.05);
+        }
+
+        .blog-category-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            color: var(--text-primary);
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more-btn {
+            color: var(--primary);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+            text-decoration: none;
+        }
+
+        .blog-card:hover .read-more-btn {
+            gap: 0.75rem;
+        }
+
+        /* Sidebar */
+        .blog-sidebar {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-widget {
+            margin-bottom: 2.5rem;
+        }
+
+        .sidebar-widget:last-child {
+            margin-bottom: 0;
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            color: var(--text-primary);
+            font-family: inherit;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .category-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .category-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            transition: color 0.3s ease;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            color: var(--primary);
+        }
+
+        @media (max-width: 992px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+            .blog-sidebar {
+                position: static;
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png" alt="TechGlaz Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%232563eb\'/><text x=\'50\' y=\'65\' font-family=\'sans-serif\' font-size=\'50\' fill=\'white\' text-anchor=\'middle\'>TG</text></svg>'">
+                TechGlaz
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="custom-request.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="blog-header">
+        <div class="container fade-in">
+            <h1 class="section-title">Engineering <span class="text-gradient">Resources</span></h1>
+            <p class="section-subtitle">Tips, tutorials, and insights to help you ace your final year projects.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section>
+        <div class="container blog-layout">
+            
+            <!-- Blog Posts -->
+            <div class="blog-main">
+                <div id="blogGrid" class="blog-grid">
+                    <!-- Loaded via JS -->
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="blog-sidebar fade-in" style="transition-delay: 0.2s;">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Search</h3>
+                    <div class="search-box">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" id="blogSearch" placeholder="Search articles...">
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <ul class="category-list" id="categoryList">
+                        <li class="category-item">
+                            <button class="category-btn active" data-category="all">
+                                <span>All Articles</span>
+                                <span class="count">(4)</span>
+                            </button>
+                        </li>
+                        <li class="category-item">
+                            <button class="category-btn" data-category="viva">
+                                <span>Viva Preparation</span>
+                                <span class="count">(1)</span>
+                            </button>
+                        </li>
+                        <li class="category-item">
+                            <button class="category-btn" data-category="projects">
+                                <span>Top Projects</span>
+                                <span class="count">(2)</span>
+                            </button>
+                        </li>
+                        <li class="category-item">
+                            <button class="category-btn" data-category="career">
+                                <span>Career Tips</span>
+                                <span class="count">(1)</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 TechGlaz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

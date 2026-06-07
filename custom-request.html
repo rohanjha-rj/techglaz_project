@@ -93,35 +93,69 @@
             font-size: 1.25rem;
         }
 
-        .step-list {
+        /* Interactive Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
             margin-bottom: 2rem;
         }
 
-        .step-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
         }
 
-        .step-number {
-            width: 30px;
-            height: 30px;
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2rem;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
-            background: rgba(37, 99, 235, 0.1);
+            background: var(--bg-secondary);
+            border: 2px solid var(--primary);
             color: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 0.75rem;
             font-weight: bold;
-            flex-shrink: 0;
+            z-index: 2;
+            transition: all 0.3s ease;
         }
 
-        .step-content h4 {
+        .timeline-item:hover .timeline-dot {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+        }
+
+        .timeline-content h4 {
             font-size: 1rem;
             margin-bottom: 0.25rem;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
         }
 
-        .step-content p {
+        .timeline-item:hover .timeline-content h4 {
+            color: var(--primary);
+        }
+
+        .timeline-content p {
             font-size: 0.9rem;
             color: var(--text-secondary);
         }
@@ -167,6 +201,7 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="projects.html" class="nav-link">Projects</a>
                 <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="custom-request.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
@@ -254,31 +289,31 @@
             <aside class="info-sidebar fade-in" style="transition-delay: 0.2s;">
                 <h3>How Custom Projects Work</h3>
                 
-                <div class="step-list">
-                    <div class="step-item">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-content">
                             <h4>Submit Requirements</h4>
                             <p>Fill out the form with your project idea or upload your college requirements/IEEE paper.</p>
                         </div>
                     </div>
-                    <div class="step-item">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-content">
                             <h4>Feasibility & Quote</h4>
                             <p>Our team analyzes the requirements and provides a fixed timeline and price quote within 24 hours.</p>
                         </div>
                     </div>
-                    <div class="step-item">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-content">
                             <h4>Development Starts</h4>
                             <p>Once approved, we begin development. You'll get weekly progress updates.</p>
                         </div>
                     </div>
-                    <div class="step-item">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">4</div>
+                        <div class="timeline-content">
                             <h4>Delivery & Explanation</h4>
                             <p>We deliver the complete code, report, and conduct a 1-on-1 session to explain the implementation.</p>
                         </div>

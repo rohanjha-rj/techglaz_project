@@ -108,13 +108,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Check URL parameters for initial filters (e.g., from homepage category click)
+    // Check URL parameters for initial filters
     const urlParams = new URLSearchParams(window.location.search);
     const branchParam = urlParams.get('branch');
+    const techParam = urlParams.get('tech');
+    const difficultyParam = urlParams.get('difficulty');
     
     if (branchParam) {
-        const cb = document.querySelector(`.filter-cb[value="${branchParam}"]`);
-        if (cb) cb.checked = true;
+        const branches = branchParam.split(',');
+        branches.forEach(b => {
+            const cb = document.querySelector(`.filter-cb[data-category="branch"][value="${b}"]`);
+            if (cb) cb.checked = true;
+        });
+    }
+    if (techParam) {
+        const techs = techParam.split(',');
+        techs.forEach(t => {
+            const cb = document.querySelector(`.filter-cb[data-category="tech"][value="${t}"]`);
+            if (cb) cb.checked = true;
+        });
+    }
+    if (difficultyParam) {
+        const diffs = difficultyParam.split(',');
+        diffs.forEach(d => {
+            const cb = document.querySelector(`.filter-cb[data-category="difficulty"][value="${d}"]`);
+            if (cb) cb.checked = true;
+        });
     }
 
     // Render projects
@@ -218,6 +237,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             return matchesSearch && matchesBranch && matchesTech && matchesDiff;
         });
+
+        // Update URL dynamically (pushState)
+        const params = new URLSearchParams();
+        if (activeFilters.branch.length > 0) params.set('branch', activeFilters.branch.join(','));
+        if (activeFilters.tech.length > 0) params.set('tech', activeFilters.tech.join(','));
+        if (activeFilters.difficulty.length > 0) params.set('difficulty', activeFilters.difficulty.join(','));
+        
+        const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+        window.history.replaceState({}, '', newUrl);
 
         renderProjects(filtered);
     }

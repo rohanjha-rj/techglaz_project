@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
+            updateThemeAwareImages(newTheme); // Hook added here
         });
     }
 
@@ -153,4 +154,82 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // 7. Scroll Progress Bar
+    const progressBarContainer = document.createElement('div');
+    progressBarContainer.className = 'scroll-progress-container';
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress-bar';
+    progressBarContainer.appendChild(progressBar);
+    document.body.prepend(progressBarContainer);
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + "%";
+    });
+
+    // 8. Back to Top Button
+    const backToTopBtn = document.createElement('div');
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+    document.body.appendChild(backToTopBtn);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 9. Page Transition Animations
+    document.body.classList.add('page-transition-enter');
+    
+    document.querySelectorAll('a').forEach(link => {
+        // Exclude anchor links, external links, and target="_blank"
+        if (link.hostname === window.location.hostname && !link.hash && link.target !== "_blank") {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const targetUrl = link.href;
+                document.body.classList.remove('page-transition-enter');
+                document.body.classList.add('page-transition-exit');
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 300); // Wait for exit animation to finish
+            });
+        }
+    });
+
+    // 10. Theme-Aware Images
+    function updateThemeAwareImages(theme) {
+        const images = document.querySelectorAll('.theme-aware-img');
+        images.forEach(img => {
+            const lightSrc = img.getAttribute('data-light-src');
+            const darkSrc = img.getAttribute('data-dark-src');
+            if (theme === 'light' && lightSrc) {
+                img.src = lightSrc;
+            } else if (theme === 'dark' && darkSrc) {
+                img.src = darkSrc;
+            }
+        });
+    }
+
+    // Call it initially
+    updateThemeAwareImages(initialTheme);
+
+    // Update the original theme toggle listener to call this
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            // ... (the existing logic will still run, this is just to hook into it, but it's better to modify the existing toggle)
+        });
+    }
 });

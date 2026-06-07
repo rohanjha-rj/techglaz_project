@@ -8,6 +8,7 @@ const projectDB = {
         title: "AI-Powered Student Attendance System using Face Recognition",
         branchName: "Computer Science",
         difficulty: "Intermediate",
+        videoId: "dQw4w9WgXcQ",
         image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80",
         overview: "This project automates the process of taking student attendance using facial recognition technology. It captures a video stream from a camera, detects faces, compares them against a known database of students, and logs attendance automatically into a database. This eliminates manual roll calls and prevents proxy attendance.",
         features: [
@@ -101,7 +102,13 @@ function renderProjectPage(project) {
                 <!-- Left Column -->
                 <div class="project-main fade-in" style="transition-delay: 0.1s;">
                     <div class="project-gallery">
-                        <img src="${project.image}" alt="${project.title}" class="main-image">
+                        ${project.videoId ? `
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/${project.videoId}?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        ` : `
+                            <img src="${project.image}" alt="${project.title}" class="main-image">
+                        `}
                     </div>
 
                     <div class="details-section">
@@ -127,6 +134,26 @@ function renderProjectPage(project) {
                             ${project.techs.map(t => `
                                 <span class="tech-tag"><i class="fa-solid fa-code"></i> ${t}</span>
                             `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Related Projects -->
+                    <div class="details-section" style="margin-top: 4rem;">
+                        <h2>Related Projects</h2>
+                        <div class="related-projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                            ${Object.keys(projectDB)
+                                .filter(id => id !== urlParams.get('id') && projectDB[id].branchName === project.branchName)
+                                .slice(0, 3)
+                                .map(id => {
+                                    const p = projectDB[id];
+                                    return `
+                                    <div class="glass-card" style="padding: 1rem;">
+                                        <img src="${p.image}" alt="${p.title}" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1rem;">
+                                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${p.title}</h4>
+                                        <a href="project-detail.html?id=${id}" style="color: var(--primary); font-size: 0.9rem; font-weight: 500;">View &rarr;</a>
+                                    </div>
+                                    `;
+                                }).join('') || '<p style="color: var(--text-secondary);">No related projects found.</p>'}
                         </div>
                     </div>
                 </div>
