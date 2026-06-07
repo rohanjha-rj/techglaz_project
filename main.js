@@ -3,41 +3,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Theme Toggle
-    const themeToggleBtn = document.getElementById('theme-toggle');
+    // 1. Theme Setting (Locked to Light)
     const htmlElement = document.documentElement;
-    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
-
-    // Check for saved theme or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    // Default to dark theme for that premium SaaS look, unless light is saved
-    const initialTheme = savedTheme === 'light' ? 'light' : 'dark';
-    
-    htmlElement.setAttribute('data-theme', initialTheme);
-    updateThemeIcon(initialTheme);
-
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-            updateThemeAwareImages(newTheme); // Hook added here
-        });
-    }
-
-    function updateThemeIcon(theme) {
-        if (!themeIcon) return;
-        if (theme === 'dark') {
-            themeIcon.className = 'fa-solid fa-sun'; // Show sun to toggle light
-        } else {
-            themeIcon.className = 'fa-solid fa-moon'; // Show moon to toggle dark
-        }
-    }
+    htmlElement.setAttribute('data-theme', 'light');
 
     // 2. Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
@@ -177,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(backToTopBtn);
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
+        if (window.scrollY > 100) {
             backToTopBtn.classList.add('visible');
         } else {
             backToTopBtn.classList.remove('visible');
@@ -209,27 +177,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 10. Theme-Aware Images
-    function updateThemeAwareImages(theme) {
+    // 10. Theme-Aware Images (Locked to Light)
+    function updateThemeAwareImages() {
         const images = document.querySelectorAll('.theme-aware-img');
         images.forEach(img => {
             const lightSrc = img.getAttribute('data-light-src');
-            const darkSrc = img.getAttribute('data-dark-src');
-            if (theme === 'light' && lightSrc) {
+            if (lightSrc) {
                 img.src = lightSrc;
-            } else if (theme === 'dark' && darkSrc) {
-                img.src = darkSrc;
             }
         });
     }
 
     // Call it initially
-    updateThemeAwareImages(initialTheme);
-
-    // Update the original theme toggle listener to call this
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            // ... (the existing logic will still run, this is just to hook into it, but it's better to modify the existing toggle)
-        });
-    }
+    updateThemeAwareImages();
 });
