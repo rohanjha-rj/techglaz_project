@@ -42,38 +42,34 @@
             transform: scale(1.08); /* subtle Ken-Burns on hover */
         }
 
-        /* Gradient overlay for readability */
+        /* Clean dark overlay for text readability */
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(10, 16, 40, 0.78) 0%,
-                rgba(37, 99, 235, 0.55) 50%,
-                rgba(124, 58, 237, 0.45) 100%
-            );
+            background: rgba(0, 0, 0, 0.55);
         }
 
         /* Decorative ambient glow blobs */
         .hero-glow-1, .hero-glow-2 {
             position: absolute;
             border-radius: 50%;
-            filter: blur(100px);
+            filter: blur(120px);
             pointer-events: none;
+            z-index: 1;
         }
         .hero-glow-1 {
-            width: 40vw;
-            height: 40vw;
-            top: -10%;
-            left: -5%;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.45), transparent 70%);
-        }
-        .hero-glow-2 {
             width: 35vw;
             height: 35vw;
-            bottom: -10%;
-            right: -5%;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.4), transparent 70%);
+            top: 10%;
+            left: 5%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.35), transparent 70%);
+        }
+        .hero-glow-2 {
+            width: 30vw;
+            height: 30vw;
+            bottom: 10%;
+            right: 5%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.30), transparent 70%);
         }
 
         /* Foreground content */
@@ -95,7 +91,7 @@
             margin-bottom: 1.5rem;
             line-height: 1.1;
             color: #ffffff;
-            text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+            text-shadow: 0 2px 20px rgba(0,0,0,0.6);
         }
 
         .hero-content h1 .text-gradient {
@@ -106,12 +102,12 @@
         }
 
         .hero-content p {
-            font-size: 1.175rem;
-            color: rgba(255, 255, 255, 0.88);
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.92);
             margin-bottom: 2.5rem;
             max-width: 680px;
-            line-height: 1.75;
-            text-shadow: 0 1px 12px rgba(0,0,0,0.3);
+            line-height: 1.8;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.5);
         }
 
         .hero-buttons {
