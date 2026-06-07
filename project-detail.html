@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGlaz | Project Details</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .project-detail-header {
+            padding-top: 120px;
+            padding-bottom: 3rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .back-btn:hover {
+            color: var(--primary);
+        }
+
+        .project-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .project-meta-top {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Gallery */
+        .project-gallery {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 3rem;
+            background: var(--bg-secondary);
+        }
+
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Details Section */
+        .details-section {
+            margin-bottom: 3rem;
+        }
+
+        .details-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .feature-item i {
+            color: #10b981;
+            margin-top: 0.25rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tech-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-pill);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Pricing Sidebar */
+        .pricing-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .package-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--bg-secondary);
+            padding: 0.5rem;
+            border-radius: var(--radius-pill);
+        }
+
+        .pkg-btn {
+            flex: 1;
+            padding: 0.75rem;
+            text-align: center;
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            color: var(--text-secondary);
+        }
+
+        .pkg-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .price-display {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .price-display span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        .package-includes {
+            margin-bottom: 2rem;
+        }
+
+        .package-includes li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .package-includes li i {
+            color: #10b981;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (max-width: 992px) {
+            .project-layout {
+                grid-template-columns: 1fr;
+            }
+            .pricing-sidebar {
+                position: static;
+                order: -1; /* Move to top on mobile */
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png" alt="TechGlaz Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%232563eb\'/><text x=\'50\' y=\'65\' font-family=\'sans-serif\' font-size=\'50\' fill=\'white\' text-anchor=\'middle\'>TG</text></svg>'">
+                TechGlaz
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="custom-request.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content will be injected by JS -->
+    <div id="projectDetailContainer">
+        <!-- Loading State -->
+        <div class="container" style="padding-top: 150px; text-align: center; min-height: 60vh;">
+            <i class="fa-solid fa-circle-notch fa-spin fa-3x" style="color: var(--primary);"></i>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">Loading project details...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 TechGlaz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="project-detail.js"></script>
+</body>
+</html>

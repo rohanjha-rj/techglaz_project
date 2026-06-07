@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGlaz | Pricing Plans</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .pricing-header {
+            padding-top: 120px;
+            padding-bottom: 4rem;
+            text-align: center;
+            background: var(--bg-secondary);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: -3rem; /* Overlap with header */
+            padding-bottom: 5rem;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-desc {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-features {
+            flex-grow: 1;
+            margin-bottom: 2.5rem;
+        }
+
+        .plan-features li {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .plan-features li i {
+            margin-top: 0.25rem;
+            color: var(--text-secondary);
+        }
+
+        .plan-features li.included i {
+            color: #10b981;
+        }
+
+        .plan-features li:not(.included) {
+            color: var(--text-secondary);
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            padding: 5rem 0;
+            background: var(--bg-color);
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            margin-top: 3rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        .comparison-table th, 
+        .comparison-table td {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th:first-child, 
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: var(--text-primary);
+            width: 40%;
+        }
+
+        .comparison-table th {
+            background: rgba(0,0,0,0.02);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table i.fa-check {
+            color: #10b981;
+            font-size: 1.25rem;
+        }
+
+        .comparison-table i.fa-xmark {
+            color: var(--text-secondary);
+            opacity: 0.3;
+        }
+
+        .highlight-col {
+            background: rgba(37, 99, 235, 0.05);
+        }
+
+        @media (max-width: 992px) {
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+            .pricing-card.popular:hover {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://techglaz.com/wp-content/uploads/2023/12/cropped-cropped-techglaz-logo-transprent.png" alt="TechGlaz Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%232563eb\'/><text x=\'50\' y=\'65\' font-family=\'sans-serif\' font-size=\'50\' fill=\'white\' text-anchor=\'middle\'>TG</text></svg>'">
+                TechGlaz
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="pricing.html" class="nav-link active">Pricing</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="custom-request.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Custom Project</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pricing-header">
+        <div class="container fade-in">
+            <h1 class="section-title">Simple, Transparent <span class="text-gradient">Pricing</span></h1>
+            <p class="section-subtitle">Choose the package that best fits your final year requirements. No hidden fees.</p>
+        </div>
+    </header>
+
+    <!-- Pricing Cards -->
+    <section>
+        <div class="container">
+            <div class="pricing-grid">
+                
+                <!-- Basic Plan -->
+                <div class="pricing-card fade-in glass">
+                    <h3 class="plan-name">Basic</h3>
+                    <p class="plan-desc">For students who only need the working code and execution guide.</p>
+                    <div class="plan-price">₹2,500<span>/project</span></div>
+                    
+                    <ul class="plan-features">
+                        <li class="included"><i class="fa-solid fa-check"></i> Complete Source Code</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Execution Video</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> IEEE Base Paper</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Setup Instructions</li>
+                        <li><i class="fa-solid fa-xmark"></i> Project Report (Word doc)</li>
+                        <li><i class="fa-solid fa-xmark"></i> Code Explanation Session</li>
+                        <li><i class="fa-solid fa-xmark"></i> Remote Installation</li>
+                    </ul>
+                    
+                    <a href="projects.html" class="btn btn-outline" style="width: 100%; justify-content: center;">Browse Projects</a>
+                </div>
+
+                <!-- Standard Plan -->
+                <div class="pricing-card popular fade-in glass" style="transition-delay: 0.1s;">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3 class="plan-name">Standard</h3>
+                    <p class="plan-desc">The complete package with full documentation and explanation.</p>
+                    <div class="plan-price">₹4,000<span>/project</span></div>
+                    
+                    <ul class="plan-features">
+                        <li class="included"><i class="fa-solid fa-check"></i> Complete Source Code</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Execution Video</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> IEEE Base Paper</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Setup Instructions</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Complete Project Report</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> PPT & Synopsis</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> 1 Hour Code Explanation</li>
+                        <li><i class="fa-solid fa-xmark"></i> Remote Installation</li>
+                    </ul>
+                    
+                    <a href="projects.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Browse Projects</a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card fade-in glass" style="transition-delay: 0.2s;">
+                    <h3 class="plan-name">Premium</h3>
+                    <p class="plan-desc">Done-for-you service with priority support and remote setup.</p>
+                    <div class="plan-price">₹6,500<span>/project</span></div>
+                    
+                    <ul class="plan-features">
+                        <li class="included"><i class="fa-solid fa-check"></i> Everything in Standard</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Remote AnyDesk/TeamViewer Setup</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Minor Customizations</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Plagiarism Report</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Viva Preparation Guide</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> 24/7 Priority WhatsApp Support</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Lifetime Access to Updates</li>
+                    </ul>
+                    
+                    <a href="projects.html" class="btn btn-outline" style="width: 100%; justify-content: center;">Browse Projects</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container fade-in">
+            <div class="text-center">
+                <h2 class="section-title">Compare <span class="text-gradient">Packages</span></h2>
+                <p class="section-subtitle">A detailed breakdown of what's included in each tier.</p>
+            </div>
+            
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Basic</th>
+                            <th class="highlight-col" style="color: var(--primary);">Standard</th>
+                            <th>Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Source Code & Assets</td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                            <td class="highlight-col"><i class="fa-solid fa-check"></i></td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>IEEE Base Paper</td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                            <td class="highlight-col"><i class="fa-solid fa-check"></i></td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Execution Video</td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                            <td class="highlight-col"><i class="fa-solid fa-check"></i></td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Project Report (50+ Pages)</td>
+                            <td><i class="fa-solid fa-xmark"></i></td>
+                            <td class="highlight-col"><i class="fa-solid fa-check"></i></td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>PPT & Synopsis</td>
+                            <td><i class="fa-solid fa-xmark"></i></td>
+                            <td class="highlight-col"><i class="fa-solid fa-check"></i></td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>1-on-1 Code Explanation</td>
+                            <td><i class="fa-solid fa-xmark"></i></td>
+                            <td class="highlight-col"><i class="fa-solid fa-check"></i></td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Remote Installation (AnyDesk)</td>
+                            <td><i class="fa-solid fa-xmark"></i></td>
+                            <td class="highlight-col"><i class="fa-solid fa-xmark"></i></td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Plagiarism Report</td>
+                            <td><i class="fa-solid fa-xmark"></i></td>
+                            <td class="highlight-col"><i class="fa-solid fa-xmark"></i></td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Minor Customizations</td>
+                            <td><i class="fa-solid fa-xmark"></i></td>
+                            <td class="highlight-col"><i class="fa-solid fa-xmark"></i></td>
+                            <td><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Request Banner -->
+    <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+        <div class="container text-center fade-in">
+            <h2>Need Something Completely Unique?</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 2rem;">If you have a specific idea or requirement from your college that isn't listed in our projects, we can build it from scratch.</p>
+            <a href="custom-request.html" class="btn btn-primary" style="padding: 1rem 2rem;">
+                Request Custom Project
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 TechGlaz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
